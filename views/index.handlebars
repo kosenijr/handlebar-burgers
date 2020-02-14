@@ -1,0 +1,65 @@
+<div class="container bg">
+	
+	<div class="row">
+	    <div class="center col-sm-12">
+            <div class = "banner">
+			<img src="assets/img/cat_burger.jpg" alt="Eat-Da-Burger App">
+	        <h1>Eat Burgers App</h1>
+	    </div>
+    </div>
+  	</div>
+    <hr>
+    <form class="create-form">
+	<div class="row">
+	    <div class="center col-sm-12 d-flex justify-content-center">
+    <div class="form-group">
+      <label for="ca"><h3>Add a Burger:</h3></label>
+      <input type="text" id="ca" name="name">
+    </div>
+    <button type="submit">Add Burger</button>
+  </form>
+	<!-- end .row -->
+	<div class="row" class="text-center">
+	</div>
+  <Div>
+    <hr>
+  </Div>
+	   
+  </div>
+</div>
+
+
+	<div class="row">
+	    <div class="col-sm-6">
+      <h2>Burgers Available To Eat!</h2>
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{!-- {{this.burger_name}} --}}
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+
+
+	<div class="col-sm-6">
+<h2>burgers that are Eaten!</h2>
+{{#each burgers}}
+    {{#if this.devoured}}
+  {{!-- {{burger_name}} --}}
+  <div class="eatenBurgers">
+      <ul>
+        <input class="change-state" data-id="{{this.id}}" type="text" placeholder="{{this.burger_name}}" readonly>
+        {{!-- {{#if devoured}}Eat Me!{{else}}I'm Eaten!{{/if}} --}}
+      </ul>
+    </div>
+    </input>
+        {{!-- {{> burgers/burger-block devoured=false}} --}}
+        {{!-- {{this.burger_name}} --}}
+      {{/if}}
+    {{/each}}
+    </div>
+
+  </div>
+</div>
